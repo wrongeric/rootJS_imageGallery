@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>gallery</title>
+	<style>
+		.galleryImg{
+			width: 25%;
+			float: left;
+			position: relative;
+
+		}
+		.galleryImg > img{
+			width: 100%;
+
+		}
+		.galleryImg:hover > img{
+			position: absolute;
+			left: 0px;
+			top: 0px;
+			z-index: 1;
+			width: 50vw;
+		}
+	</style>
+</head>
+
+<body>
+
+</body>
+	<script>
+
+	var images = [
+		//add images here based on photos in the images folder.
+		//each image name needs to be a string
+		//remember, the images are in a folder called "image"
+	];
+
+	// call one of the functions below.  Give it an argument of the
+	// images array above
+	
+
+	/******** you don't need to modify anything below this line ******/
+	function displayImagesInGallery(imageArray){
+		for(var imageIndex = 0; imageIndex < imageArray.length; imageIndex++){
+			var image = createImageElement(imageArray[imageIndex]);
+			document.querySelector('body').appendChild(image);
+		}
+	}
+
+
+	function createImageElement(imgSource){
+		var imgContainer = document.createElement('FIGURE');
+		imgContainer.className = "galleryImg"
+		var imgElement = document.createElement('IMG');
+		imgElement.src = imgSource;
+		imgContainer.appendChild(imgElement)
+		return imgContainer;
+	}
+
+	</script>
+</html>
